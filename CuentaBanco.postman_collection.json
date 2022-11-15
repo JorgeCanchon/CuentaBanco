@@ -161,7 +161,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg1MjIyNDMsImV4cCI6MTY2ODUyNTg0MywiaWF0IjoxNjY4NTIyMjQzfQ.s2mITpZ0y8QI31PYWZ1EtqRM075zSEf3jM9cGmHw0gE",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg1MjgwNzgsImV4cCI6MTY2ODUzMTY3OCwiaWF0IjoxNjY4NTI4MDc4fQ.p6UtWitTiv6k3eRpQFJmFcysDzmQIykpGOmbEi4OWlM",
 									"type": "string"
 								}
 							]
@@ -465,6 +465,62 @@
 							"path": [
 								"api",
 								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reportes",
+			"item": [
+				{
+					"name": "EstadoDeCuenta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg1MzI3MDMsImV4cCI6MTY2ODUzNjMwMywiaWF0IjoxNjY4NTMyNzAzfQ.jSAkBsLeJAIoW_CZTygIvX_xljdwn487Dz47OgNX3ps",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "identi",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://localhost:44329/api/reportes?identificacion=1020831720&fechaInicio=2022-11-10&fechaFinal=2022-11-16",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44329",
+							"path": [
+								"api",
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "identificacion",
+									"value": "1020831720"
+								},
+								{
+									"key": "fechaInicio",
+									"value": "2022-11-10"
+								},
+								{
+									"key": "fechaFinal",
+									"value": "2022-11-16"
+								}
 							]
 						}
 					},
