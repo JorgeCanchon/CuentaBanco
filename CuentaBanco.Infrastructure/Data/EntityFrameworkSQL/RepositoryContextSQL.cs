@@ -29,7 +29,7 @@ namespace CuentaBanco.Infrastructure.Data.EntityFrameworkSQL
         public virtual DbSet<Persona> Personas { get; set; }
         public virtual DbSet<Cuenta> Cuentas { get; set; }
         public virtual DbSet<Movimientos> Movimientos { get; set; }
-        public virtual DbSet<ReporteEstadoCuenta> Reportes { get; set; }
+        public virtual DbSet<ReporteEstadoCuenta> ReporteEstadoCuenta { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -41,6 +41,8 @@ namespace CuentaBanco.Infrastructure.Data.EntityFrameworkSQL
                 modelBuilder.HasAnnotation("Sqlite:Autoincement", true)
                     .HasAnnotation("MySql:ValueGeneratedOnAdd", true)
                     .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                modelBuilder.Entity<ReporteEstadoCuenta>().HasNoKey();
 
                 modelBuilder.ApplyConfiguration(new ClienteConfiguration());
                 modelBuilder.ApplyConfiguration(new PersonaConfiguration());

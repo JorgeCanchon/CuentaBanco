@@ -96,7 +96,7 @@ BEGIN
 	SELECT M.Fecha, P.Nombre, C.NumeroCuenta, C.TipoCuenta, M.Saldo, C.Estado, 
 		CASE WHEN M.TipoMovimiento = 'debito' 
 			THEN CONCAT('-',M.Valor) 
-			ELSE M.Valor 
+			ELSE CONCAT('',M.Valor) 
 		END [Valor], 
 		CASE WHEN M.TipoMovimiento = 'debito' 
 			THEN M.Saldo - M.Valor

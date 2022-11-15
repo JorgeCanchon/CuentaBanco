@@ -13,24 +13,23 @@ namespace CuentaBanco.Core.UsesCases
 {
     public class ReportesInteractor : StatusInteractor, IReportesInteractor
     {
-        private readonly IMovimientosRepository _movimientosRepository;
-        private readonly ICuentaRepository _cuentaRepository;
+        private readonly IReporteEstadoCuentaRepository _reporteEstadoCuentaRepository;
 
         public ReportesInteractor(IRepositoryWrapper repositoryWrapper)
         {
             var _repositoryWrapper = repositoryWrapper ?? throw new ArgumentNullException(nameof(repositoryWrapper));
-            _movimientosRepository = _repositoryWrapper.MovimientosRepository;
-            _cuentaRepository = _repositoryWrapper.CuentaRepository;
+            _reporteEstadoCuentaRepository = _repositoryWrapper.ReporteEstadoCuentaRepository;
         }
 
-        public Response EstadoDeCuenta(DateTime fechaInicio, DateTime fechaFinal)
+        public Response EstadoDeCuenta(string identificacion, DateTime fechaInicio, DateTime fechaFinal)
         {
             Func<Response> func = () =>
             {
-                var movimientos = _movimientosRepository.FindAll();
+                string sql = $"EXEC dbo.ReporteEstadoDeCuenta '{identificacion}','{fechaInicio}','{fechaFinal}'";
+                var reporte = _reporteEstadoCuentaRepository.ExecuteQuery(sql).ToList();
 
-                return movimientos.Any() ?
-                    new Response() { Status = (int)HttpStatusCode.OK, Message = OK, Payload = movimientos } :
+                return reporte.Any() ?
+                    new Response() { Status = (int)HttpStatusCode.OK, Message = OK, Payload = reporte } :
                     new Response() { Status = (int)HttpStatusCode.NotContent, Message = NO_CONTENT, Payload = null };
             };
 

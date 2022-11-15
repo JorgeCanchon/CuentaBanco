@@ -9,6 +9,6 @@ namespace CuentaBanco.Core.Interfaces.UsesCases
 {
     public interface IReportesInteractor
     {
-        Response EstadoDeCuenta(DateTime fechaInicio, DateTime fechaFinal);
+        Response EstadoDeCuenta(string identificacion, DateTime fechaInicio, DateTime fechaFinal);
     }
 }

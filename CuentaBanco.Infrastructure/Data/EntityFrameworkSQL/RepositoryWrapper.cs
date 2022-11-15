@@ -14,6 +14,7 @@ namespace CuentaBanco.Infrastructure.Data.EntityFrameworkSQL
         public IClienteRepository clienteRepository;
         public ICuentaRepository cuentaRepository;
         public IMovimientosRepository movimientosRepository;
+        public IReporteEstadoCuentaRepository reporteEstadoCuentaRepository;
 
         public RepositoryWrapper(RepositoryContextSQL repositoryContextSqlServer)
         {
@@ -47,6 +48,16 @@ namespace CuentaBanco.Infrastructure.Data.EntityFrameworkSQL
                 if (movimientosRepository == null)
                     return movimientosRepository = new MovimientosRepository(_repositoryContextSqlServer);
                 return movimientosRepository;
+            }
+        }
+
+        public IReporteEstadoCuentaRepository ReporteEstadoCuentaRepository
+        {
+            get
+            {
+                if (reporteEstadoCuentaRepository == null)
+                    return reporteEstadoCuentaRepository = new ReporteEstadoCuentaRepository(_repositoryContextSqlServer);
+                return reporteEstadoCuentaRepository;
             }
         }
     }

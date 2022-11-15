@@ -11,5 +11,6 @@ namespace CuentaBanco.Core.Interfaces.Repositories
         IClienteRepository ClienteRepository { get; }
         ICuentaRepository CuentaRepository { get; }
         IMovimientosRepository MovimientosRepository { get; }
+        IReporteEstadoCuentaRepository ReporteEstadoCuentaRepository { get; }
     }
 }

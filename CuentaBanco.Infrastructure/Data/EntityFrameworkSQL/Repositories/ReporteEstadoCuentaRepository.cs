@@ -1,5 +1,5 @@
 ﻿using CuentaBanco.Core.Interfaces.Repositories;
-using CuentaBanco.Core.Models;
+using CuentaBanco.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

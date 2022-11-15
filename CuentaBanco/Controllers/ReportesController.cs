@@ -24,9 +24,9 @@ namespace CuentaBanco.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(DateTime fechaInicio, DateTime fechaFinal)
+        public IActionResult Get(string identificacion, DateTime fechaInicio, DateTime fechaFinal)
         {
-            Response response = _reportesInteractor.EstadoDeCuenta(fechaInicio, fechaFinal);
+            Response response = _reportesInteractor.EstadoDeCuenta(identificacion, fechaInicio, fechaFinal);
             return GetStatus(response.Status, response);
         }
     }
