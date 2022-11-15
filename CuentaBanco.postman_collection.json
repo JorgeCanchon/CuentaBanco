@@ -26,7 +26,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"nombre\": \"Jorge Canchon\",\r\n  \"genero\": \"Masculino\",\r\n  \"fechaNacimiento\": \"2022-11-15T01:56:08.776Z\",\r\n  \"identificacion\": \"1020831720\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": \"string\",\r\n  \"contrasena\": \"string\"\r\n}",
+							"raw": "{\r\n  \"nombre\": \"Jorge Canchon\",\r\n  \"genero\": \"Masculino\",\r\n  \"fechaNacimiento\": \"2022-11-15T01:56:08.776Z\",\r\n  \"identificacion\": \"1020831720\",\r\n  \"direccion\": \"string\",\r\n  \"telefono\": \"string\",\r\n  \"contrasena\": \"string\",\r\n  \"estado\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -51,6 +51,16 @@
 				{
 					"name": "Obtener cliente",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg0ODk4NTgsImV4cCI6MTY2ODQ5MzQ1OCwiaWF0IjoxNjY4NDg5ODU4fQ.JAnP1Nofbu6Go0vG6s7TKXkKZhsHJ355lPMphi6Tpk4",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -76,7 +86,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg0ODk4NTgsImV4cCI6MTY2ODQ5MzQ1OCwiaWF0IjoxNjY4NDg5ODU4fQ.JAnP1Nofbu6Go0vG6s7TKXkKZhsHJ355lPMphi6Tpk4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg1MjIyNDMsImV4cCI6MTY2ODUyNTg0MywiaWF0IjoxNjY4NTIyMjQzfQ.s2mITpZ0y8QI31PYWZ1EtqRM075zSEf3jM9cGmHw0gE",
 									"type": "string"
 								}
 							]
@@ -85,7 +95,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"9\",\r\n    \"nombre\": \"Jorge Canchon\",\r\n    \"genero\": \"Masculino\",\r\n    \"fechaNacimiento\": \"1998-04-06\",\r\n    \"identificacion\": \"1020831720\",\r\n    \"direccion\": \"Carrera 6a #188c36\",\r\n    \"telefono\": \"3112711335\",\r\n    \"contrasena\": \"123456798\"\r\n}",
+							"raw": "{\r\n    \"id\": \"13\",\r\n    \"nombre\": \"Jorge Canchon\",\r\n    \"genero\": \"Masculino\",\r\n    \"fechaNacimiento\": \"1998-04-06\",\r\n    \"identificacion\": \"1020831720\",\r\n    \"direccion\": \"Carrera 6a #188c36\",\r\n    \"telefono\": \"3112711335\",\r\n    \"contrasena\": \"123456798\",\r\n    \"estado\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -123,7 +133,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44329/api/clientes/9",
+							"raw": "https://localhost:44329/api/clientes/12",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -132,7 +142,7 @@
 							"path": [
 								"api",
 								"clientes",
-								"9"
+								"12"
 							]
 						}
 					},
@@ -151,7 +161,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg0ODk4NTgsImV4cCI6MTY2ODQ5MzQ1OCwiaWF0IjoxNjY4NDg5ODU4fQ.JAnP1Nofbu6Go0vG6s7TKXkKZhsHJ355lPMphi6Tpk4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg1MjIyNDMsImV4cCI6MTY2ODUyNTg0MywiaWF0IjoxNjY4NTIyMjQzfQ.s2mITpZ0y8QI31PYWZ1EtqRM075zSEf3jM9cGmHw0gE",
 									"type": "string"
 								}
 							]
@@ -181,7 +191,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg0ODk4NTgsImV4cCI6MTY2ODQ5MzQ1OCwiaWF0IjoxNjY4NDg5ODU4fQ.JAnP1Nofbu6Go0vG6s7TKXkKZhsHJ355lPMphi6Tpk4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg1MjIyNDMsImV4cCI6MTY2ODUyNTg0MywiaWF0IjoxNjY4NTIyMjQzfQ.s2mITpZ0y8QI31PYWZ1EtqRM075zSEf3jM9cGmHw0gE",
 									"type": "string"
 								}
 							]
@@ -190,7 +200,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"numeroCuenta\": \"1354879\",\r\n  \"tipoCuenta\": \"Corriente\",\r\n  \"saldoInicial\": 10000,\r\n  \"idCliente\": 10\r\n}",
+							"raw": "{\r\n  \"numeroCuenta\": \"1354879\",\r\n  \"tipoCuenta\": \"Corriente\",\r\n  \"saldoInicial\": 10000,\r\n  \"idCliente\": 13,\r\n  \"estado\":  true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -220,7 +230,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg0ODk4NTgsImV4cCI6MTY2ODQ5MzQ1OCwiaWF0IjoxNjY4NDg5ODU4fQ.JAnP1Nofbu6Go0vG6s7TKXkKZhsHJ355lPMphi6Tpk4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg1MjIyNDMsImV4cCI6MTY2ODUyNTg0MywiaWF0IjoxNjY4NTIyMjQzfQ.s2mITpZ0y8QI31PYWZ1EtqRM075zSEf3jM9cGmHw0gE",
 									"type": "string"
 								}
 							]
@@ -229,7 +239,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"5\",\r\n    \"numeroCuenta\": \"1354879\",\r\n    \"tipoCuenta\": \"Ahorros\",\r\n    \"saldoInicial\": 10000,\r\n    \"idCliente\": 10\r\n}",
+							"raw": "{\r\n    \"id\": \"7\",\r\n    \"numeroCuenta\": \"1354879\",\r\n    \"tipoCuenta\": \"Ahorros\",\r\n    \"saldoInicial\": 10000,\r\n    \"idCliente\": 13,\r\n    \"estado\":  true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -267,7 +277,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44329/api/cuentas/4",
+							"raw": "https://localhost:44329/api/cuentas/5",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -276,7 +286,7 @@
 							"path": [
 								"api",
 								"cuentas",
-								"4"
+								"5"
 							]
 						}
 					},
@@ -295,7 +305,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg0ODk4NTgsImV4cCI6MTY2ODQ5MzQ1OCwiaWF0IjoxNjY4NDg5ODU4fQ.JAnP1Nofbu6Go0vG6s7TKXkKZhsHJ355lPMphi6Tpk4",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg1MjgwNzgsImV4cCI6MTY2ODUzMTY3OCwiaWF0IjoxNjY4NTI4MDc4fQ.p6UtWitTiv6k3eRpQFJmFcysDzmQIykpGOmbEi4OWlM",
 									"type": "string"
 								}
 							]
@@ -304,7 +314,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"tipoMovimiento\": \"Retiro\",\r\n  \"fecha\": \"2022-11-15\",\r\n  \"valor\": 100,\r\n  \"saldo\": 0,\r\n  \"idCliente\": 10,\r\n  \"idCuenta\": 5\r\n}",
+							"raw": "{\r\n  \"tipoMovimiento\": \"credito\",\r\n  \"fecha\": \"2022-11-15\",\r\n  \"valor\": 10000,\r\n  \"idCliente\": 13,\r\n  \"numeroCuenta\": \"1354879\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -329,6 +339,16 @@
 				{
 					"name": "Obtener Movimientos",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImRlbW8iLCJuYmYiOjE2Njg0OTEyNzcsImV4cCI6MTY2ODQ5NDg3NywiaWF0IjoxNjY4NDkxMjc3fQ.5ePvkwWRPyvHiBZC9UqYssiR7R90hFyLJCqLNZ_80XI",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -401,7 +421,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44329/api/movimientos/1",
+							"raw": "https://localhost:44329/api/movimientos/4",
 							"protocol": "https",
 							"host": [
 								"localhost"
@@ -410,7 +430,7 @@
 							"path": [
 								"api",
 								"movimientos",
-								"1"
+								"4"
 							]
 						}
 					},

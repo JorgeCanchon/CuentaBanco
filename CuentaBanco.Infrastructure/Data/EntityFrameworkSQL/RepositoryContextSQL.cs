@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata;
 using CuentaBanco.Core.Entities;
 using CuentaBanco.Infrastructure.Data.EntityConfiguration;
+using CuentaBanco.Core.Models;
 
 namespace CuentaBanco.Infrastructure.Data.EntityFrameworkSQL
 {
@@ -28,6 +29,7 @@ namespace CuentaBanco.Infrastructure.Data.EntityFrameworkSQL
         public virtual DbSet<Persona> Personas { get; set; }
         public virtual DbSet<Cuenta> Cuentas { get; set; }
         public virtual DbSet<Movimientos> Movimientos { get; set; }
+        public virtual DbSet<ReporteEstadoCuenta> Reportes { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

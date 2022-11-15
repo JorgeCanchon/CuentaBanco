@@ -38,10 +38,10 @@ namespace CuentaBanco.Core.UsesCases
         {
             Func<Response> func = () =>
             {
-                var tasks = _cuentaRepository.FindAll();
+                var cuentas = _cuentaRepository.FindAll();
 
-                return tasks.Any() ?
-                    new Response() { Status = (int)HttpStatusCode.OK, Message = OK, Payload = tasks } :
+                return cuentas.Any() ?
+                    new Response() { Status = (int)HttpStatusCode.OK, Message = OK, Payload = cuentas } :
                     new Response() { Status = (int)HttpStatusCode.NotContent, Message = NO_CONTENT, Payload = null };
             };
 

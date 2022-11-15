@@ -15,5 +15,6 @@ namespace CuentaBanco.Core.Interfaces.Repositories
         T Create(T entity);
         T Update(T entity);
         T Delete(int id);
+        IQueryable<T> ExecuteQuery(string sql);
     }
 }

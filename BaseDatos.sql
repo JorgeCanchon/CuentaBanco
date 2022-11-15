@@ -4,7 +4,7 @@ DROP DATABASE IF EXISTS CuentaBanco
 GO
 CREATE DATABASE CuentaBanco
 GO
-USE [CuentaBanco1]
+USE [CuentaBanco]
 GO
 CREATE TABLE [dbo].[Cliente](
 	[ID] [int] NOT NULL,
@@ -75,4 +75,38 @@ ALTER TABLE [dbo].[Movimientos]  WITH CHECK ADD  CONSTRAINT [FK__Movimient__IDCu
 REFERENCES [dbo].[Cuenta] ([ID])
 GO
 ALTER TABLE [dbo].[Movimientos] CHECK CONSTRAINT [FK__Movimient__IDCue__412EB0B6]
+GO
+-- =============================================
+-- Author:		Jorge Canchon
+-- Create date: 15/11/2022
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE ReporteEstadoDeCuenta
+	@Identificacion VARCHAR(100),
+	@FechaInicio DATETIME,
+	@FechaFinal DATETIME
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+
+	SELECT M.Fecha, P.Nombre, C.NumeroCuenta, C.TipoCuenta, M.Saldo, C.Estado, 
+		CASE WHEN M.TipoMovimiento = 'debito' 
+			THEN CONCAT('-',M.Valor) 
+			ELSE M.Valor 
+		END [Valor], 
+		CASE WHEN M.TipoMovimiento = 'debito' 
+			THEN M.Saldo - M.Valor
+			ELSE M.Saldo + M.Valor
+		END SaldoDisponible
+	FROM Movimientos M
+	INNER JOIN Cuenta C ON M.IDCuenta = C.ID
+	INNER JOIN Cliente CT ON CT.ID = M.IDCliente
+	INNER JOIN Persona P ON P.ID = CT.ID
+	WHERE P.Identificacion = @Identificacion AND
+		M.Fecha BETWEEN @FechaInicio AND @FechaFinal
+END
 GO

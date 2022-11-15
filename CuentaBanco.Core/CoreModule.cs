@@ -16,6 +16,7 @@ namespace CuentaBanco.Core
             builder.RegisterType<ClienteInteractor>().As<IClienteInteractor>().InstancePerLifetimeScope();
             builder.RegisterType<CuentaInteractor>().As<ICuentaInteractor>().InstancePerLifetimeScope();
             builder.RegisterType<MovimientosInteractor>().As<IMovimientosInteractor>().InstancePerLifetimeScope();
+            builder.RegisterType<ReportesInteractor>().As<IReportesInteractor>().InstancePerLifetimeScope();
         }
     }
 }

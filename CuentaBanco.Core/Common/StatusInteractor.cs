@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static CuentaBanco.Core.Common.Constantes;
 
 namespace CuentaBanco.Core.Common
 {
@@ -17,7 +18,7 @@ namespace CuentaBanco.Core.Common
             }
             catch (Exception e)
             {
-                return new Response() { Status = (int)HttpStatusCode.InternalServerError, Message = e.Message, Payload = null };
+                return new Response() { Status = (int)HttpStatusCode.InternalServerError, Message = $"{ERROR_APP} {e.Message}", Payload = null };
             }
         }
     }

@@ -55,6 +55,9 @@ namespace CuentaBanco.Infrastructure.Data.EntityFrameworkSQL.Repositories
             return entity;
         }
 
+        public IQueryable<T> ExecuteQuery(string sql) =>
+           Context.Set<T>().FromSqlRaw<T>(sql).AsNoTracking();
+
         public void Dispose()
         {
             Dispose(true);

@@ -15,5 +15,9 @@ namespace CuentaBanco.Core.Entities
         public int IDCliente { get; set; }
         public bool Estado { get; set; }
 
+        public bool ValidateBalance(decimal debito)
+        {
+            return SaldoInicial > 0 && SaldoInicial - debito > 0;
+        }
     }
 }
